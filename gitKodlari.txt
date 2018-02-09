@@ -3,3 +3,7 @@
  * git status : değişiklik yapılan dosyaları gösterir
 
  * git add . : bütün dosyalarımı versiyon kontrole ekle
+ 
+ * git commit -m "açıklama ekleme" : commitin açıklaması
+
+ * git push origin master : git reposuna gönderme
