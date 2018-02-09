@@ -1,1 +1,5 @@
- git clone https://github.com/behiyegok/movie-api.git .  --> burada git clone ve cloneURL bilgileri nokta da(.) bulundupum dizine kopyala oluyor
+ * git clone https://github.com/behiyegok/movie-api.git . : git clone repoyu bilgisayarımaz kopyalar cloneURL bilgileri nokta (.) bulundupum dizine kopyala oluyor
+
+ * git status : değişiklik yapılan dosyaları gösterir
+
+ * git add . : bütün dosyalarımı versiyon kontrole ekle
