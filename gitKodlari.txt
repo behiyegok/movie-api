@@ -1,0 +1,1 @@
+ git clone https://github.com/behiyegok/movie-api.git .  --> burada git clone ve cloneURL bilgileri nokta da(.) bulundupum dizine kopyala oluyor
