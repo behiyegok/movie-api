@@ -3,6 +3,8 @@
 # Movie-API
 NodeJS - Movie API Schema
 
+---
+
 # Movie 
 | Route | HTTP Verb | POST Body | Description |
 | --- | --- | --- | --- |

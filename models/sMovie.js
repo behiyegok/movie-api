@@ -11,7 +11,7 @@ const mongoose = require("mongoose"),
         country: String,
         year:Number,
         imdb_score:Number,
-        date: {
+        createdAt: {
             type:Date,
             default:Date.now
         }        
