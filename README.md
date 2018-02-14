@@ -1,3 +1,5 @@
+![Image of Movie](https://upload.wikimedia.org/wikipedia/commons/9/90/Asianet_Movies.png)
+
 # Movie-API
 NodeJS - Movie API Schema
 
