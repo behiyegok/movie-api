@@ -1,2 +1,7 @@
 # movie-api
-NodeJS eğitimi movie API
+NodeJS - Movie API
+
+#Movie
+| Route | HTTP Verb | POST Body | Description |
+| --- | --- | --- | --- |
+|/api/movie | `GET` | Empty | List All Movies.|
