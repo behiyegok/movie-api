@@ -17,10 +17,12 @@ router.post('/', function (req, res) {
 
   const movie = new sMovie(req.body);  //body den dönen cevapları direk bu şekilde de kaydedebilirsin
 
-  // movie.save((err, data) => {
-  //   if (err) res.json(err);
-  //   res.json({ status: 1 });
-  // });
+  /*
+  movie.save((err, data) => {
+    if (err) res.json(err);
+    res.json({ status: 1 });
+  });
+*/
 
   const promise = movie.save();
   promise.then((data) => {
@@ -53,7 +55,7 @@ router.get("/top10", (req, res) => {
 // GET see a movie
 router.get("/:movie_id", (req, res, next) => {  //örnek data : 5a83ec52b776b6136cdb1931
   sMovie.findById(req.params.movie_id, (err, data) => {
-    if (err) next(err);
+    if (err) next(err);  //next kullanmazsak istek patlar patlayınca da sunucu ayağa kalkmıyor başarılı bir istek yapsan da sunucu cevap vermiyor mortingen anlayacağınız
     res.json(data);
   });
 });
@@ -87,7 +89,7 @@ router.get("/between/:start_year/:end_year", (req, res) => {
     {
       // "$gte" : büyük eşitse , "$lte" : küçük eşitse
       // "$gt" : büyükse , "$lt" : küçükse
-      year: { "$gt": parseInt(start_year), "$lt": parseInt(end_year) } 
+      year: { "$gt": parseInt(start_year), "$lt": parseInt(end_year) }
     },
     (err, data) => {
       if (err) throw err;
