@@ -67,7 +67,7 @@ router.get("/", (req, res) => {
 router.get("/:director_id", (req, res) => {
     const promise = Director.aggregate([
         {
-            $match:{
+            $match: {
                 "_id": mongoose.Types.ObjectId(req.params.director_id)
             }
         },
@@ -116,6 +116,33 @@ router.get("/:director_id", (req, res) => {
         res.json(err);
     })
     //res.json({ title: "behiye" })
+});
+
+// PUT update a director
+router.put("/:director_id", (req, res, next) => {
+    const promise = Director.findByIdAndUpdate(
+        req.params.director_id,
+        req.body,
+        {
+            new: true
+        }
+    );
+
+    promise.then((director) => {
+        if (!director)
+            next({ message: "director was not found.", code: 99 });
+        res.json(director);
+    }).catch((err) => {
+        res.json(err);
+    });
+});
+
+// DELETE remove a director
+router.delete("/:director_id", (req, res, next) => {
+    Director.findByIdAndRemove(req.params.director_id, (err, data) => {
+        if (err) next (err)
+        res.json({ status: 1 });
+    });
 });
 
 

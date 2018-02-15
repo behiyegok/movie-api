@@ -35,10 +35,26 @@ router.post('/', function (req, res) {
 
 // GET see all movies
 router.get("/", (req, res) => {
-  sMovie.find({}, (err, data) => {
-    if (err) throw err;
+  sMovie.aggregate([
+    {
+      $lookup: {
+        from: "directors",
+        localField: "director_id",
+        foreignField: "_id",
+        as: "directors"
+      }
+    },
+    {
+      $unwind: "$directors"
+    }
+  ], (err, data) => {
     res.json(data);
   });
+
+  // sMovie.find({}, (err, data) => {
+  //   if (err) throw err;
+  //   res.json(data);
+  // });
 });
 
 // GET Top 10 movies
