@@ -2,7 +2,7 @@ const express = require('express'),
   router = express.Router(),
   sMovie = require("../models/sMovie")
 
-/* POST save movie */
+/* POST save a movie */
 router.post('/', function (req, res) {
   /*
   const { title, imdb_score, category, country, year } = req.body;
@@ -26,7 +26,8 @@ router.post('/', function (req, res) {
 
   const promise = movie.save();
   promise.then((data) => {
-    res.json({ status: 1 });
+    res.json(//{ status: 1 }
+      data);
   }).catch((err) => {
     res.json(err);
   });
@@ -69,7 +70,7 @@ router.get("/top10", (req, res) => {
 });
 
 // GET see a movie
-router.get("/:movie_id", (req, res, next) => {  //örnek data : 5a83ec52b776b6136cdb1931
+router.get("/:movie_id", (req, res, next) => {  //örnek data : 5a84355b97e4808aec68a161
   sMovie.findById(req.params.movie_id, (err, data) => {
     if (err) next(err);  //next kullanmazsak istek patlar patlayınca da sunucu ayağa kalkmıyor başarılı bir istek yapsan da sunucu cevap vermiyor mortingen anlayacağınız
     res.json(data);
