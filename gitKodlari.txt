@@ -7,3 +7,6 @@
  * git commit -m "açıklama ekleme" : commitin açıklaması
 
  * git push origin master : git reposuna gönderme
+
+ * "start": "node ./bin/www", production da çalışma komutları 
+   "start:dev": "nodemon ./bin/www", local de çalışma komutları çalıştırmak için artık : npm run start:dev
