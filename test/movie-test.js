@@ -32,7 +32,7 @@ describe("/api/movies token", () => {
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a("array");
-                    done();
+                   // done();
                 });
         });
     });
@@ -60,7 +60,7 @@ describe("/api/movies token", () => {
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a("object");
-                   // res.body.should.have.property("title");
+                    res.body.should.have.property("title");
                     res.body.should.have.property("director_id");
                     res.body.should.have.property("category");
                     res.body.should.have.property("country");
