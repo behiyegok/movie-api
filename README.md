@@ -1,5 +1,7 @@
 ![Image of Movie](https://upload.wikimedia.org/wikipedia/commons/9/90/Asianet_Movies.png)
 
+[![Build status](https://api.travis-ci.org/behiyegok/movie-api.svg)](https://travis-ci.org/behiyegok/movie-api)
+
 # Movie-API
 NodeJS - Movie API Schema
 
